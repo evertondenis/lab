@@ -1,4 +1,4 @@
-import { call, put, takeEvery, all, take, race } from 'redux-saga/effects';
+import { call, put, take, race } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 import axios from 'axios';
 import { actions as PollingActions, types as PollingTypes } from './actions';
@@ -22,7 +22,6 @@ export function* loadJoke() {
 }
 
 export default function* root() {
-  // yield all([takeEvery(PollingTypes.GET_JOKE, loadJoke)]);
   while (true) {
     yield take(PollingTypes.GET_JOKE, loadJoke);
     yield race([call(loadJoke), take(PollingTypes.STOP_JOKE)]);
