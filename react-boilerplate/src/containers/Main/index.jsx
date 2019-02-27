@@ -4,9 +4,16 @@ import { Brand } from 'components';
 import { GlobalStyle } from 'core/assets/style/global';
 import logo from 'core/assets/images/logo.svg';
 import { AppHeader, AppContainer } from './styled';
+import { Colors, Animations, Spacings } from 'sds-design-token';
 
 class App extends PureComponent {
   render() {
+    //eslint-disable-next-line
+    console.log(Colors);
+    //eslint-disable-next-line
+    console.log(Animations);
+    //eslint-disable-next-line
+    console.log(Spacings);
     return (
       <Fragment>
         <AppContainer>
